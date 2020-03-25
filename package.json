@@ -1,0 +1,13 @@
+{
+  "name": "room-temperature-rpi",
+  "version": "1.0.0",
+  "description": "Node JS application for displaying local temperature using an Rpi.",
+  "main": "index.js",
+  "repository": "git@github.com:redReno/room-temperature-rpi.git",
+  "author": "Alf Stenbrunn <c@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
