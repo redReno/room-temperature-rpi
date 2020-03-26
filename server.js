@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 
 app.get('/temperature', async function (req, res) {
   var temperature = null;
-  const { error, stdout, stderr } = await exec(__dirname + '/src/rpi_temp.out', { shell: false });
+  const { error, stdout, stderr } = await exec(__dirname + '/src/rpi_temp.out', { shell: true });
   if (typeof error !== 'undefined') {
     console.error(stderr);
     res.send(stderr);
