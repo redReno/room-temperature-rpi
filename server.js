@@ -15,12 +15,12 @@ app.get('/', function (req, res) {
   res.sendFile('index.html', rpath);
 })
 
-// start c program running in bg
-const led_controller = spawn(__dirname + '/src/rpi_temp.out', ['0', '1']);
+// start led controller and let it run. Allows LED in GPIO14 to blink. 
+const led_controller = spawn(__dirname + '/src/led.out', ['14']);
 
 app.get('/temperature', async function (req, res) {
   var temperature = null
-  // send signal to turn on led
+  // send signal to make LED blink
   led_controller.kill('SIGINT')
   const { error, stdout, stderr } = await exec(__dirname + '/src/rpi_temp.out', { debug: 1 });
   if (typeof error !== 'undefined') {
